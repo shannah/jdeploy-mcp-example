@@ -11,7 +11,7 @@ on:
 # Prevent concurrent jDeploy workflows to avoid race conditions
 concurrency:
   group: jdeploy-${{ github.repository }}
-  cancel-in-progress: falsev
+  cancel-in-progress: false
 
 jobs:
   build:
