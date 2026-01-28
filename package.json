@@ -1,0 +1,33 @@
+{
+    "name": "weather-mcp",
+    "description": "A Quarkus MCP server providing weather tools (alerts and forecasts)",
+    "version": "1.0.0",
+    "license": "ISC",
+    "bin": {"weather": "jdeploy-bundle/jdeploy.js"},
+    "main": "index.js",
+    "preferGlobal": true,
+    "files": ["jdeploy-bundle"],
+    "scripts": {"test": "echo \"Error: no test specified\" && exit 1"},
+    "jdeploy": {
+        "javaVersion": "25",
+        "jar": "target/weather-1.0.0-SNAPSHOT-runner.jar",
+        "title": "Weather MCP Server",
+        "fallbackToUniversal": false,
+        "generateLegacyBundles": false,
+        "platformBundlesEnabled": false,
+        "downloadPage": {"platforms": ["default"]},
+        "ai": {"mcp": {"command": "weather"}},
+        "commands": {
+            "weather": {
+                "description": "Weather MCP server providing getAlerts and getForecast tools"
+            }
+        }
+    },
+    "dependencies": {
+        "command-exists-promise": "^2.0.2",
+        "node-fetch": "2.6.7",
+        "tar": "^4.4.8",
+        "yauzl": "^2.10.0",
+        "shelljs": "^0.8.4"
+    }
+}
